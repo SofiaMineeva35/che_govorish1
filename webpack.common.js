@@ -78,13 +78,22 @@ module.exports = {
      // Landing page
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      chunks: ['index']
     }),
 
     // Landing page
     new HtmlWebpackPlugin({
       template: './src/cover.html',
-      filename: './cover.html'
+      filename: './cover.html',
+      chunks: ['index']
+    }),
+
+    // Landing page
+    new HtmlWebpackPlugin({
+      template: './src/responsive.html',
+      filename: './responsive.html',
+      chunks: ['index']
     }),
 
 
