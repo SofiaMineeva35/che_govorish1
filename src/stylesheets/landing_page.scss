@@ -1,0 +1,14 @@
+.header {
+    background-image: url(../images/background_main.svg);
+    background-color: black;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
