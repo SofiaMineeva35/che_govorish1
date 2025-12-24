@@ -74,48 +74,16 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
 
-
-     // Landing page
+    // Main page
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html',
-      chunks: ['index']
+      filename: './index.html'
     }),
 
-    // Landing page
     new HtmlWebpackPlugin({
-      template: './src/cover.html',
-      filename: './cover.html',
-      chunks: ['index']
+      template: './src/styleguide.html',
+      filename: './styleguide.html'
     }),
-
-    // Landing page
-    new HtmlWebpackPlugin({
-      template: './src/responsive.html',
-      filename: './responsive.html',
-      chunks: ['index']
-    }),
-
-
-
-    // Internal pages
-    // new HtmlWebpackPlugin({
-    //   hash: true,
-    //   scriptLoading: 'blocking',
-    //   template: './src/pages/page.html',
-    //   filename: './pages/page.html',
-    //   chunks: ['page']
-    // }),
-
-    // Partials
-    new HtmlWebpackPartialsPlugin([
-      {
-        path: path.join(__dirname, './src/partials/analytics.html'),
-        location: 'analytics',
-        template_filename: '*',
-        priority: 'replace'
-      }
-    ])
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]

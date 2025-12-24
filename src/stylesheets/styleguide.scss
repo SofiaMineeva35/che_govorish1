@@ -1,0 +1,405 @@
+.header {
+    background-image: url(../images/main-page-background.jpg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 47px 0;
+}
+
+nav a {
+    color: #F4F5F8;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #FF7F39;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
+    background-image: url('../images/phone-mockup.png');
+    background-position: 120% bottom;
+    background-repeat: no-repeat;
+}
+
+.header-logo {
+    background-image: url('../images/logo-main.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 113px;
+    margin-bottom: 34px;
+}
+
+.header-title {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 47px;
+    margin-bottom: 18px;
+}
+
+.header-description {
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.grid-container {
+    display: grid;
+    /* Две колонки одинаковой ширины */
+    grid-template-columns: 1fr 1fr;
+    /* Два ряда, высота которых определяется содержимым */
+    grid-template-rows: auto auto;
+    /* Промежуток между ячейками сетки */
+    gap: 30px; /* Увеличим отступ, чтобы соответствовать картинке */
+    max-width: 1000px; /* Ограничиваем максимальную ширину */
+    width: 90%; /* Адаптивная ширина */
+    padding: 20px;
+}
+
+/* Общие стили для всех элементов сетки */
+.grid-item {
+    padding: 30px; /* Общий паддинг для всех блоков */
+    border-radius: 8px; /* Немного скругленные углы */
+    overflow: hidden; /* Чтобы clip-path работал корректно */
+}
+
+/* Стили для заголовков в блоках */
+.card-header, .grid-item h2 {
+    font-size: 2.2em; /* Больше для заголовков */
+    font-weight: 700; /* Жирный */
+    margin-top: 0;
+    margin-bottom: 25px; /* Отступ после заголовка */
+    line-height: 1.1;
+}
+
+/* Стили для блока "ИДЕЯ" */
+.card-idea {
+    background-color: #fff; /* Белый фон */
+    color: #000; /* Черный текст */
+    border: 2px solid #00BFFF; /* Голубая обводка */
+    /* Используем clip-path для создания формы "вкладки" */
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) 100%, 25px 100%, 0% calc(100% - 25px));
+    position: relative;
+}
+.card-idea .card-header {
+    color: #000; /* Заголовок тоже черный */
+}
+
+/* Стили для блока "МИССИЯ БРЕНДА" */
+.card-mission {
+    background-color: #FF7F00; /* Оранжевый фон */
+    color: #fff; /* Белый текст */
+    /* Такая же форма вкладки */
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) 100%, 25px 100%, 0% calc(100% - 25px));
+    position: relative;
+}
+.card-mission .card-header {
+    color: #fff; /* Заголовок белый */
+}
+
+/* Стили для содержимого карт */
+.card-body p {
+    font-size: 1.1em;
+    margin-bottom: 0;
+}
+
+/* Стили для секции "ЦЕННОСТИ" */
+.section-values h2 {
+    color: #fff; /* Белый заголовок */
+    margin-bottom: 20px;
+}
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Промежуток между пунктами ценностей */
+}
+.value-item {
+    border: 1px solid #fff; /* Белая обводка */
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    display: inline-block; /* Чтобы рамка облегала текст */
+    width: fit-content; /* Ширина по содержимому */
+}
+
+/* Стили для секции "TONE OF VOICE" */
+.section-tone-of-voice h2 {
+    color: #fff; /* Белый заголовок */
+    margin-bottom: 30px;
+}
+.tone-sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Промежуток между группами слайдеров */
+}
+.slider-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+.slider-track {
+    flex-grow: 1; /* Занимает все доступное пространство */
+    height: 2px;
+    background-color: #444; /* Темно-серый трек */
+    margin: 0 15px; /* Отступы от текста */
+    position: relative; /* Для позиционирования точки */
+}
+.slider-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff; /* Белая точка */
+    border-radius: 50%; /* Круглая форма */
+    top: 50%;
+    transform: translateY(-50%); /* Центрирование по вертикали */
+}
+/* Позиции точек для каждого слайдера (регулируйте `left` по необходимости) */
+.dot-mem { left: 10%; }
+.dot-bold { left: 40%; }
+.dot-old { left: 70%; }
+.dot-academic { left: 85%; }
+
+
+/* Адаптивность: колонки будут располагаться друг под другом на маленьких экранах */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Одна колонка, занимающая всю ширину */
+        gap: 40px; /* Увеличим отступ между блоками, когда они стоят вертикально */
+        width: 95%;
+        padding: 15px;
+    }
+    .grid-item {
+        padding: 25px;
+    }
+    .card-header, .grid-item h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .card-body p, .value-item, .slider-group span {
+        font-size: 1em;
+    }
+}
+
+.logo {
+    padding-bottom: 130px;
+    padding-top: 130px;
+}
+
+.head {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 58px;
+}
+
+.cube {
+    padding-right: 35px;
+}
+
+.title {
+    font-family: Inter Tight;
+    font-size: 56px;
+}
+
+.logo-icons {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 60px;
+}
+
+.logo-icon {
+    padding-right: 60px;
+}
+
+.logo-icon1 {
+    padding-bottom: 23px;
+}
+
+.logo-icon-text {
+    font-size: 23px;
+}
+
+.page-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-icon {
+    padding-right: 60px;
+}
+
+.page {
+    padding-bottom: 23px;
+}
+
+.typo {
+    padding-bottom: 130px;
+    padding-top: 130px;
+}
+
+.typo-text {
+    font-size: 18px;
+}
+
+.typo-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.typo-text2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.typo-column1 {
+    padding-right: 124px;
+}
+
+.typo-TITLE {
+    font-family: Inter Tight;
+    font-size: 56px;
+}
+
+.typo-subTITLE {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 30px;
+}
+
+.typo-button {
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 30px;
+}
+
+.typo-main-text {
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.typo-description {
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+.grid {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 70px;
+    padding-right: 117px;
+}
+
+.grid-title {
+    font-family: Inter Tight;
+    font-size: 56px;
+    width: 241px;
+}
+
+.grid-main-text {
+    font-size: 18px;
+    padding-top: 13px;
+}
+
+.grid-text {
+    padding-right: 117px;
+}
+
+.grid-column {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.column-orange {
+    background-color: #FF7F39;
+    height: 155px;
+    width: 119px;
+    margin-right: 14px;
+}
+
+.column-grey {
+    background-color: #C8C8C8;
+    height: 155px;
+    width: 102px;
+    margin-right: 15px;
+}
+
+.column-white {
+    background-color: #F4F5F8;
+    height: 155px;
+    width: 115px;
+    margin-right: 9px;
+}
+
+.graphics {
+    background-image: url(../images/white-note.svg);
+    background-size: auto;
+    margin-top: 120px;
+}
+
+.title2 {
+    color: #000;
+    font-family: Inter Tight;
+    font-size: 56px;
+    padding-left: 86px;
+    padding-top: 47px;
+}
+
+.count {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 28px;
+    padding-bottom: 23px;
+}
+
+.number {
+    font-size: 18px;
+    padding-right: 28px;
+    width: 135px;
+}
+
+.count1 {
+    background-color: #C8C8C8;
+    height: 17px;
+    width: 1072px;
+}
+
+.count2 {
+    background-color: #C8C8C8;
+    height: 17px;
+    width: 1072px;
+    padding-top: 23px;
+}
+
+.count3 {
+    background-color: #C8C8C8;
+    height: 35px;
+    width: 1072px;
+    padding-top: 23px;
+}
+
+.count4 {
+    background-color: #C8C8C8;
+    height: 70px;
+    width: 1072px;
+    padding-top: 23px;
+}
+
+.count5 {
+    background-color: #C8C8C8;
+    height: 140px;
+    width: 1072px;
+    padding-top: 23px;
+}
+
+.media {
+    padding-bottom: 52px;
+}
