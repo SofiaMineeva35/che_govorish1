@@ -84,6 +84,31 @@ module.exports = {
       template: './src/styleguide.html',
       filename: './styleguide.html'
     }),
+
+    new HtmlWebpackPlugin({
+      template: './src/landing.html',
+      filename: './landing.html'
+    }),
+
+        new HtmlWebpackPlugin({
+      template: './src/quizfirst.html',
+      filename: './quizfirst.html'
+    }),
+
+        new HtmlWebpackPlugin({
+      template: './src/quiztwo.html',
+      filename: './quiztwo.html'
+    }),
+
+        new HtmlWebpackPlugin({
+      template: './src/quizthree.html',
+      filename: './quizthree.html'
+    }),
+
+    new HtmlWebpackPlugin({
+      template: './src/article.html',
+      filename: './article.html'
+    }),
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]

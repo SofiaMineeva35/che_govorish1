@@ -2,9 +2,10 @@
     background-image: url(../images/main-page-background.jpg);
 }
 
-.container {
+.container-st {
     max-width: 1400px;
     margin: 0 auto;
+    margin-left: 40px;
 }
 
 nav {
@@ -26,7 +27,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 600px;
+    height: 550px;
     background-image: url('../images/phone-mockup.png');
     background-position: 120% bottom;
     background-repeat: no-repeat;
@@ -52,146 +53,99 @@ nav a:hover {
     margin-bottom: 18px;
 }
 
-.grid-container {
-    display: grid;
-    /* Две колонки одинаковой ширины */
-    grid-template-columns: 1fr 1fr;
-    /* Два ряда, высота которых определяется содержимым */
-    grid-template-rows: auto auto;
-    /* Промежуток между ячейками сетки */
-    gap: 30px; /* Увеличим отступ, чтобы соответствовать картинке */
-    max-width: 1000px; /* Ограничиваем максимальную ширину */
-    width: 90%; /* Адаптивная ширина */
-    padding: 20px;
+.idea-mission {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 78px;
 }
 
-/* Общие стили для всех элементов сетки */
-.grid-item {
-    padding: 30px; /* Общий паддинг для всех блоков */
-    border-radius: 8px; /* Немного скругленные углы */
-    overflow: hidden; /* Чтобы clip-path работал корректно */
-}
-
-/* Стили для заголовков в блоках */
-.card-header, .grid-item h2 {
-    font-size: 2.2em; /* Больше для заголовков */
-    font-weight: 700; /* Жирный */
-    margin-top: 0;
-    margin-bottom: 25px; /* Отступ после заголовка */
-    line-height: 1.1;
-}
-
-/* Стили для блока "ИДЕЯ" */
-.card-idea {
-    background-color: #fff; /* Белый фон */
-    color: #000; /* Черный текст */
-    border: 2px solid #00BFFF; /* Голубая обводка */
-    /* Используем clip-path для создания формы "вкладки" */
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) 100%, 25px 100%, 0% calc(100% - 25px));
-    position: relative;
-}
-.card-idea .card-header {
-    color: #000; /* Заголовок тоже черный */
-}
-
-/* Стили для блока "МИССИЯ БРЕНДА" */
-.card-mission {
-    background-color: #FF7F00; /* Оранжевый фон */
-    color: #fff; /* Белый текст */
-    /* Такая же форма вкладки */
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) 100%, 25px 100%, 0% calc(100% - 25px));
-    position: relative;
-}
-.card-mission .card-header {
-    color: #fff; /* Заголовок белый */
-}
-
-/* Стили для содержимого карт */
-.card-body p {
-    font-size: 1.1em;
-    margin-bottom: 0;
-}
-
-/* Стили для секции "ЦЕННОСТИ" */
-.section-values h2 {
-    color: #fff; /* Белый заголовок */
-    margin-bottom: 20px;
-}
-.values-list {
+.idea {
+    background-image: url('../images/style-wh-p.svg');
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Промежуток между пунктами ценностей */
+    justify-content: space-between;
+    width: 620px;
+    height: 428px;
+    margin-right: 35px;
 }
-.value-item {
-    border: 1px solid #fff; /* Белая обводка */
+
+.mission {
+    background-image: url('../images/style-or-p.svg');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 620px;
+    height: 428px;
+}
+
+.idea-title {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 47px;
+    color: #000000;
+    padding-top: 93px;
+    padding-left: 35px;
+}
+
+.idea-text {
+padding-bottom: 18px;
+    color: #000000;
+    font-size: 23px;
+    padding-left: 35px;
+}
+
+.value-cont {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 78px;
+}
+
+.value-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.value-point {
+    border: 1px solid #FF7F39; 
+    color: #F4F5F8;
     padding: 10px 18px;
     border-radius: 5px;
-    font-size: 1.1em;
-    display: inline-block; /* Чтобы рамка облегала текст */
-    width: fit-content; /* Ширина по содержимому */
+    font-size: 23px;
+    display: inline-block; 
+    width: fit-content; 
+    margin-bottom: 17px;
+    margin-left: 35px;
 }
 
-/* Стили для секции "TONE OF VOICE" */
-.section-tone-of-voice h2 {
-    color: #fff; /* Белый заголовок */
-    margin-bottom: 30px;
+.value-tov {
+    display: flex;
+    justify-content: flex-start;
 }
-.tone-sliders {
+
+.value-cont {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Промежуток между группами слайдеров */
-}
-.slider-group {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    font-size: 1.1em;
+    height: 455px;
 }
-.slider-track {
-    flex-grow: 1; /* Занимает все доступное пространство */
-    height: 2px;
-    background-color: #444; /* Темно-серый трек */
-    margin: 0 15px; /* Отступы от текста */
-    position: relative; /* Для позиционирования точки */
-}
-.slider-dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: #fff; /* Белая точка */
-    border-radius: 50%; /* Круглая форма */
-    top: 50%;
-    transform: translateY(-50%); /* Центрирование по вертикали */
-}
-/* Позиции точек для каждого слайдера (регулируйте `left` по необходимости) */
-.dot-mem { left: 10%; }
-.dot-bold { left: 40%; }
-.dot-old { left: 70%; }
-.dot-academic { left: 85%; }
 
+.tov {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 455px;
+    margin-top: 75px;
+    margin-left: 300px;
+}
 
-/* Адаптивность: колонки будут располагаться друг под другом на маленьких экранах */
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Одна колонка, занимающая всю ширину */
-        gap: 40px; /* Увеличим отступ между блоками, когда они стоят вертикально */
-        width: 95%;
-        padding: 15px;
-    }
-    .grid-item {
-        padding: 25px;
-    }
-    .card-header, .grid-item h2 {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-    }
-    .card-body p, .value-item, .slider-group span {
-        font-size: 1em;
-    }
+.value-title {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 47px;
+    padding-left: 35px;
+    margin-top: 20px;
 }
 
 .logo {
-    padding-bottom: 130px;
+    margin-bottom: 130px;
     padding-top: 130px;
 }
 
@@ -217,15 +171,19 @@ nav a:hover {
 }
 
 .logo-icon {
-    padding-right: 60px;
+    margin-right: 60px;
 }
 
 .logo-icon1 {
-    padding-bottom: 23px;
+    margin-bottom: 23px;
 }
 
 .logo-icon-text {
     font-size: 23px;
+}
+
+.color {
+    margin-top: 500px;
 }
 
 .page-icons {
@@ -348,7 +306,7 @@ nav a:hover {
 .title2 {
     color: #000;
     font-family: Inter Tight;
-    font-size: 56px;
+    font-size: 47px;
     padding-left: 86px;
     padding-top: 47px;
     padding-bottom: 50px;
@@ -408,7 +366,7 @@ nav a:hover {
 .graphics-list {
     display: flex;
     justify-content: flex-start;
-    margin-left: 165px;
+    margin-left: 75px;
 }
 
 .graphics-item {
@@ -464,5 +422,47 @@ nav a:hover {
     font-size: 18px;
     width: 545px;
     padding-bottom: 83px;
+}
+
+.gliphs {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.gliph {
+    margin-right: 100px;
+}
+
+.gliphss {
+    margin-top: 100px;
+    max-width: 1400px;
+}
+
+.illustrations {
+   margin-top: 10px;
+   padding-left: 45px;
+}
+
+.gliph-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.gliph-ph {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.photoes-ill {
+    margin-bottom: 100px;
+}
+
+.gliphsss {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
