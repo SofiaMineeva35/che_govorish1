@@ -1,5 +1,1 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-
-/******/ })()
-;
+import './index.css'
